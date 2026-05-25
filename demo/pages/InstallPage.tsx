@@ -2,6 +2,12 @@ import { Container, Section, Stack, Heading, Text, Label, Divider, Spacer, Image
 import { DocsLayout } from "../layout/DocsLayout";
 import { CodeBlock } from "../components/CodeBlock";
 import { images } from "../constants/images";
+import {
+  installSnippet,
+  installSnippetPnpm,
+  installSnippetYarn,
+  packageMeta,
+} from "../constants/packageMeta";
 
 export function InstallPage() {
   return (
@@ -15,7 +21,16 @@ export function InstallPage() {
                 <Heading level={1}>Installation</Heading>
                 <Spacer size={4} />
                 <Text variant="lg" tone="muted" leading="relaxed">
-                  Install Silent UI and its peer dependencies in a few commands.
+                  Install <code>{packageMeta.name}</code> (v{packageMeta.version}) and
+                  its runtime dependencies in your React app.{" "}
+                  <a
+                    href={packageMeta.npmUrl}
+                    className="docs-inline-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on npm
+                  </a>
                 </Text>
               </div>
 
@@ -41,14 +56,23 @@ export function InstallPage() {
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">npm / yarn / pnpm</h2>
-                <CodeBlock
-                  language="bash"
-                  code={`npm install @silent-ui/react framer-motion
-
-# peer dependencies (if not already installed)
-npm install react react-dom`}
-                />
+                <h2 className="docs-h2">Install in your project</h2>
+                <Text tone="muted" leading="relaxed">
+                  <code>framer-motion</code> is required for animations. React and
+                  React DOM are peer dependencies.
+                </Text>
+                <Spacer size={4} />
+                <Label>npm</Label>
+                <Spacer size={2} />
+                <CodeBlock language="bash" code={installSnippet} />
+                <Spacer size={6} />
+                <Label>yarn</Label>
+                <Spacer size={2} />
+                <CodeBlock language="bash" code={installSnippetYarn} />
+                <Spacer size={6} />
+                <Label>pnpm</Label>
+                <Spacer size={2} />
+                <CodeBlock language="bash" code={installSnippetPnpm} />
               </article>
 
               <article className="docs-article">
@@ -84,14 +108,14 @@ import "@silent-ui/react/styles.css";`} />
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">Local development</h2>
+                <h2 className="docs-h2">Run the documentation site locally</h2>
                 <Text tone="muted" leading="relaxed">
-                  Clone the repository and run the interactive docs site:
+                  Clone the repository to preview this site on your machine:
                 </Text>
                 <Spacer size={4} />
                 <CodeBlock
                   language="bash"
-                  code={`git clone <repo-url> silent-ui
+                  code={`${packageMeta.repoClone}
 cd silent-ui
 npm install
 npm run dev    # http://localhost:5173`}
@@ -99,11 +123,16 @@ npm run dev    # http://localhost:5173`}
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">Production build</h2>
+                <h2 className="docs-h2">Build from source</h2>
+                <Text tone="muted" leading="relaxed">
+                  When working from the repository, build the library or the static
+                  documentation site:
+                </Text>
+                <Spacer size={4} />
                 <CodeBlock
                   language="bash"
                   code={`npm run build       # library → dist/
-npm run build:demo  # static docs build`}
+npm run build:demo  # documentation site → demo/dist/`}
                 />
               </article>
             </Stack>

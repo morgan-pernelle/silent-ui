@@ -3,6 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { DocsLayout } from "../layout/DocsLayout";
 import { CodeBlock } from "../components/CodeBlock";
 import { images } from "../constants/images";
+import { installSnippet, packageMeta } from "../constants/packageMeta";
 
 export function GettingStartedPage() {
   return (
@@ -16,7 +17,8 @@ export function GettingStartedPage() {
                 <Heading level={1}>Getting Started</Heading>
                 <Spacer size={4} />
                 <Text variant="lg" tone="muted" leading="relaxed">
-                  Set up Silent UI in under two minutes and build your first screen.
+                  Install <code>{packageMeta.name}</code> from npm, wrap your app, and
+                  compose your first screen in a few minutes.
                 </Text>
               </div>
 
@@ -33,7 +35,20 @@ export function GettingStartedPage() {
               <Divider />
 
               <article className="docs-article">
-                <h2 className="docs-h2">1. Wrap your application</h2>
+                <h2 className="docs-h2">1. Install the package</h2>
+                <Text tone="muted" leading="relaxed">
+                  Published on npm — see{" "}
+                  <RouterLink to="/docs/install" className="docs-inline-link">
+                    Installation
+                  </RouterLink>{" "}
+                  for yarn, pnpm, fonts, and peer dependency details.
+                </Text>
+                <Spacer size={4} />
+                <CodeBlock language="bash" code={installSnippet} />
+              </article>
+
+              <article className="docs-article">
+                <h2 className="docs-h2">2. Wrap your application</h2>
                 <Text tone="muted" leading="relaxed">
                   <code>SilentProvider</code> applies the theme, loads global styles, and
                   exposes context for <code>useSilentTheme</code>.
@@ -52,7 +67,7 @@ export default function App() {
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">2. Use your first components</h2>
+                <h2 className="docs-h2">3. Use your first components</h2>
                 <CodeBlock code={`import { Heading, Text, Button, Fade, Stack } from "@silent-ui/react";
 
 export function Hero() {
@@ -73,7 +88,7 @@ export function Hero() {
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">3. Light / dark theme</h2>
+                <h2 className="docs-h2">4. Light / dark theme</h2>
                 <CodeBlock code={`import { useSilentTheme } from "@silent-ui/react";
 
 function ThemeToggle() {
@@ -87,7 +102,7 @@ function ThemeToggle() {
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">4. Scroll animations</h2>
+                <h2 className="docs-h2">5. Scroll animations</h2>
                 <Text tone="muted" leading="relaxed">
                   Motion components use Framer Motion with calibrated easing curves.
                   <code>prefers-reduced-motion</code> is respected automatically.
@@ -107,7 +122,7 @@ function ThemeToggle() {
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">5. Toasts & feedback</h2>
+                <h2 className="docs-h2">6. Toasts & feedback</h2>
                 <CodeBlock code={`import { ToastProvider, useToast } from "@silent-ui/react";
 
 // Root
@@ -121,7 +136,7 @@ toast({ title: "Saved", description: "Project created." });`} />
               </article>
 
               <article className="docs-article">
-                <h2 className="docs-h2">6. Customize tokens</h2>
+                <h2 className="docs-h2">7. Customize tokens</h2>
                 <Text tone="muted" leading="relaxed">
                   Override CSS variables on <code>:root</code> or{" "}
                   <code>[data-silent-theme="dark"]</code> to match your brand without

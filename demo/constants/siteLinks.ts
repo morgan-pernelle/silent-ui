@@ -1,4 +1,4 @@
-/** External links for the demo site — update hrefs to match your repository. */
+/** External links for the demo site footer. */
 export const socialLinks = [
   {
     label: "GitHub",

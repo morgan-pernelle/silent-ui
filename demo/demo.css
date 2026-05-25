@@ -597,6 +597,17 @@ a:has(button) {
   border-radius: var(--silent-radius-sm);
 }
 
+.docs-inline-link {
+  color: var(--silent-color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--silent-color-line-strong);
+}
+
+.docs-inline-link:hover {
+  text-decoration-color: var(--silent-color-ink);
+}
+
 /* Skip link */
 .skip-link {
   position: absolute;
