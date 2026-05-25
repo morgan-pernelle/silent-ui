@@ -1,0 +1,75 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--silent-color-paper-elevated);
+  border: 1px solid var(--silent-color-line);
+  border-radius: var(--silent-radius-md);
+  overflow: hidden;
+  transition: border-color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.card:hover {
+  border-color: var(--silent-color-line-strong);
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  padding: var(--silent-space-6);
+  padding-bottom: var(--silent-space-8);
+}
+
+.compact .body {
+  padding: var(--silent-space-5);
+  padding-bottom: var(--silent-space-6);
+}
+
+.media {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--silent-color-accent-soft);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--silent-duration-slower) var(--silent-ease-out);
+}
+
+.interactive:hover .media img {
+  transform: scale(1.03);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.4) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity var(--silent-duration-slow) var(--silent-ease-out);
+}
+
+.interactive:hover .overlay {
+  opacity: 1;
+}
+
+.footer {
+  padding: var(--silent-space-4) var(--silent-space-6);
+  border-top: 1px solid var(--silent-color-line);
+}
+

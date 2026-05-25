@@ -1,0 +1,50 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.silent-ui-root {
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-base);
+  line-height: var(--silent-leading-normal);
+  color: var(--silent-color-ink);
+  background-color: var(--silent-color-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.silent-ui-root ::selection {
+  background: var(--silent-color-ink);
+  color: var(--silent-color-paper);
+}
+
+[data-silent-theme="dark"] .silent-ui-root ::selection {
+  background: var(--silent-color-ink);
+  color: var(--silent-color-paper);
+}
+
+.silent-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .silent-ui-root *,
+  .silent-ui-root *::before,
+  .silent-ui-root *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "@silent-ui/react",
+  "version": "0.1.0",
+  "description": "A minimal UI library with smooth animations, inspired by Japanese design and award-winning web experiences.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morgan-pernelle/silent-ui.git"
+  },
+  "homepage": "https://github.com/morgan-pernelle/silent-ui#readme",
+  "bugs": {
+    "url": "https://github.com/morgan-pernelle/silent-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/silent-ui.cjs",
+  "module": "./dist/silent-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/silent-ui.js",
+      "require": "./dist/silent-ui.cjs"
+    },
+    "./styles.css": "./dist/silent-ui.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.demo.config.ts",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "build:demo": "vite build --config vite.demo.config.ts",
+    "preview": "vite preview --config vite.demo.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "framer-motion": "^11.18.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0",
+    "vitest": "^3.0.5"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "minimal",
+    "animation",
+    "design-system"
+  ],
+  "license": "MIT"
+}

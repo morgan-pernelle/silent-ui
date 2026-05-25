@@ -1,0 +1,54 @@
+.root {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--silent-scrollbar-thumb) var(--silent-scrollbar-track);
+}
+
+.root::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.root::-webkit-scrollbar-track {
+  background: var(--silent-scrollbar-track);
+}
+
+.root::-webkit-scrollbar-thumb {
+  background-color: var(--silent-scrollbar-thumb);
+  border-radius: var(--silent-radius-full);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background-color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.root::-webkit-scrollbar-thumb:hover {
+  background-color: var(--silent-scrollbar-thumb-hover);
+}
+
+.root::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.both {
+  overflow: auto;
+}
+
+.thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.wide::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}

@@ -1,0 +1,61 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--silent-color-line-strong);
+  cursor: pointer;
+  transition: color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.starFilled {
+  color: var(--silent-color-ink);
+}
+
+.star:hover:not(:disabled),
+.star:focus-visible {
+  color: var(--silent-color-ink-muted);
+}
+
+.readonly .star {
+  cursor: default;
+}
+
+.readonly .star:hover {
+  color: inherit;
+}
+
+.readonly .starFilled {
+  color: var(--silent-color-ink);
+}
+
+.star:disabled {
+  cursor: not-allowed;
+}
+
+.sm .star {
+  font-size: var(--silent-text-sm);
+}
+
+.md .star {
+  font-size: var(--silent-text-lg);
+}
+
+.lg .star {
+  font-size: var(--silent-text-xl);
+}
+
+.label {
+  margin-left: var(--silent-space-3);
+  font-size: var(--silent-text-sm);
+  color: var(--silent-color-ink-faint);
+  font-family: var(--silent-font-mono);
+}

@@ -1,0 +1,90 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--silent-space-2);
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.dateControl {
+  padding-top: 0;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--silent-space-2);
+  width: 100%;
+  min-height: 2rem;
+}
+
+.segments {
+  display: flex;
+  align-items: center;
+  gap: var(--silent-space-1);
+  flex: 1;
+}
+
+.segment {
+  font-family: var(--silent-font-mono);
+  font-size: var(--silent-text-base);
+  color: var(--silent-color-ink);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  width: 2ch;
+}
+
+.segmentYear {
+  width: 4ch;
+}
+
+.segment::placeholder {
+  color: var(--silent-color-ink-faint);
+  opacity: 0.4;
+}
+
+.sep {
+  color: var(--silent-color-ink-faint);
+  font-size: var(--silent-text-sm);
+  user-select: none;
+}
+
+.toggle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background: none;
+  color: var(--silent-color-ink-faint);
+  cursor: pointer;
+  font-size: var(--silent-text-sm);
+  transition: color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.toggle:hover {
+  color: var(--silent-color-ink);
+}
+
+.hint {
+  font-size: var(--silent-text-xs);
+  color: var(--silent-color-ink-faint);
+}
+
+.errorText {
+  font-size: var(--silent-text-xs);
+  color: #8b4040;
+}
+
+.invalidHint {
+  font-size: var(--silent-text-xs);
+  color: #8b4040;
+}

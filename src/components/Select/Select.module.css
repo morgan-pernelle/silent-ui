@@ -1,0 +1,53 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--silent-space-2);
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.selectControl {
+  padding-top: 0;
+  cursor: pointer;
+}
+
+.triggerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--silent-space-2);
+  width: 100%;
+  min-height: 2rem;
+}
+
+.trigger {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-base);
+  color: var(--silent-color-ink);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.triggerPlaceholder {
+  color: var(--silent-color-ink-faint);
+}
+
+.arrow {
+  flex-shrink: 0;
+  color: var(--silent-color-ink-faint);
+  font-size: var(--silent-text-sm);
+  transition: color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.selectControl:hover .arrow,
+.selectControl:focus-within .arrow {
+  color: var(--silent-color-ink);
+}

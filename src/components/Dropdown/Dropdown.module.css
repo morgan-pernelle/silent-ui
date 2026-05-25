@@ -1,0 +1,89 @@
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.fallbackTrigger {
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-sm);
+  letter-spacing: var(--silent-tracking-wide);
+  text-transform: uppercase;
+  color: var(--silent-color-ink);
+  background: transparent;
+  border: 1px solid var(--silent-color-line-strong);
+  border-radius: var(--silent-radius-sm);
+  padding: var(--silent-space-2) var(--silent-space-4);
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + var(--silent-space-2));
+  z-index: var(--silent-z-overlay);
+  min-width: 10rem;
+  padding: var(--silent-space-2);
+  background: var(--silent-color-paper-elevated);
+  border: 1px solid var(--silent-color-line);
+  border-radius: var(--silent-radius-md);
+  box-shadow: 0 12px 40px rgba(10, 10, 10, 0.1);
+}
+
+[data-silent-theme="dark"] .menu {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.alignStart {
+  left: 0;
+}
+
+.alignEnd {
+  right: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: block;
+  width: 100%;
+  padding: var(--silent-space-3) var(--silent-space-4);
+  border: none;
+  background: transparent;
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-sm);
+  letter-spacing: var(--silent-tracking-wide);
+  color: var(--silent-color-ink-muted);
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--silent-radius-sm);
+  transition:
+    color var(--silent-duration-normal) var(--silent-ease-out),
+    background var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.item:hover:not(:disabled) {
+  color: var(--silent-color-ink);
+  background: var(--silent-color-accent-soft);
+}
+
+.itemSelected {
+  color: var(--silent-color-ink);
+  background: var(--silent-color-accent-soft);
+}
+
+.item:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.divider {
+  height: 1px;
+  margin: var(--silent-space-1) 0;
+  background: var(--silent-color-line);
+}

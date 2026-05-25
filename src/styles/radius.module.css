@@ -1,0 +1,19 @@
+.none {
+  border-radius: 0;
+}
+
+.sm {
+  border-radius: var(--silent-radius-sm);
+}
+
+.md {
+  border-radius: var(--silent-radius-md);
+}
+
+.lg {
+  border-radius: var(--silent-radius-lg);
+}
+
+.full {
+  border-radius: var(--silent-radius-full);
+}

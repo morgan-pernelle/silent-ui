@@ -1,0 +1,116 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--silent-space-2);
+  min-height: 2.75rem;
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-sm);
+  letter-spacing: var(--silent-tracking-wide);
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--silent-color-ink);
+  transition:
+    color var(--silent-duration-normal) var(--silent-ease-out),
+    opacity var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--silent-color-focus);
+  outline-offset: 4px;
+}
+
+/* Sizes */
+.sm {
+  padding: var(--silent-space-2) var(--silent-space-3);
+}
+
+.md {
+  padding: var(--silent-space-3) var(--silent-space-5);
+}
+
+.lg {
+  padding: var(--silent-space-4) var(--silent-space-6);
+  font-size: var(--silent-text-base);
+}
+
+/* Variants */
+.ghost .underline {
+  transform-origin: left;
+  transition: transform var(--silent-duration-slow) var(--silent-ease-out);
+}
+
+.ghost:hover:not(:disabled) .underline {
+  transform: scaleX(1);
+}
+
+.ghost .underline {
+  transform: scaleX(0.3);
+}
+
+.primary {
+  background: var(--silent-color-ink);
+  color: var(--silent-color-paper);
+  border-radius: var(--silent-radius-sm);
+  transition:
+    background var(--silent-duration-normal) var(--silent-ease-out),
+    transform var(--silent-duration-fast) var(--silent-ease-out);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--silent-color-ink-muted);
+}
+
+.primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.outline {
+  border: 1px solid var(--silent-color-line-strong);
+  border-radius: var(--silent-radius-sm);
+  transition: border-color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.outline:hover:not(:disabled) {
+  border-color: var(--silent-color-ink);
+}
+
+.underlineWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: currentColor;
+}
+
+.icon {
+  display: inline-flex;
+  opacity: 0.6;
+  transition: opacity var(--silent-duration-normal) var(--silent-ease-out),
+    transform var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.button:hover:not(:disabled) .icon {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.fullWidth {
+  width: 100%;
+}

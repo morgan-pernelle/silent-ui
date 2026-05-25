@@ -1,0 +1,230 @@
+.calendar {
+  position: absolute;
+  top: calc(100% + var(--silent-space-2));
+  left: 0;
+  z-index: var(--silent-z-overlay);
+  width: 340px;
+  padding: var(--silent-space-4);
+  background: var(--silent-color-paper-elevated);
+  border: 1px solid var(--silent-color-line);
+  border-radius: var(--silent-radius-md);
+  box-shadow: 0 12px 40px rgba(10, 10, 10, 0.1);
+}
+
+[data-silent-theme="dark"] .calendar {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.body {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-height: 240px;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding-right: var(--silent-space-4);
+  border-right: 1px solid var(--silent-color-line);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--silent-space-4);
+}
+
+.monthLabel {
+  font-size: var(--silent-text-sm);
+  letter-spacing: var(--silent-tracking-wide);
+  text-transform: uppercase;
+  color: var(--silent-color-ink);
+  font-weight: 500;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  color: var(--silent-color-ink-muted);
+  cursor: pointer;
+  border-radius: var(--silent-radius-sm);
+  transition:
+    color var(--silent-duration-normal) var(--silent-ease-out),
+    background var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.navBtn:hover:not(:disabled) {
+  color: var(--silent-color-ink);
+  background: var(--silent-color-accent-soft);
+}
+
+.navBtn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: var(--silent-space-2);
+}
+
+.weekday {
+  font-size: var(--silent-text-xs);
+  letter-spacing: var(--silent-tracking-wide);
+  text-transform: uppercase;
+  color: var(--silent-color-ink-faint);
+  text-align: center;
+  padding: var(--silent-space-1) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--silent-text-sm);
+  color: var(--silent-color-ink-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--silent-radius-sm);
+  cursor: pointer;
+  transition:
+    background var(--silent-duration-normal) var(--silent-ease-out),
+    color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.day:hover:not(:disabled) {
+  background: var(--silent-color-accent-soft);
+  color: var(--silent-color-ink);
+}
+
+.daySelected {
+  background: var(--silent-color-ink);
+  color: var(--silent-color-paper);
+}
+
+.daySelected:hover:not(:disabled) {
+  background: var(--silent-color-ink-muted);
+  color: var(--silent-color-paper);
+}
+
+.dayToday {
+  border: 1px solid var(--silent-color-line-strong);
+}
+
+.dayOutside {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.day:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+/* Year scroller — Apple-style column */
+.yearColumn {
+  position: relative;
+  width: 76px;
+  flex-shrink: 0;
+  margin-left: var(--silent-space-2);
+}
+
+.yearList {
+  height: 100%;
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--silent-scrollbar-thumb) transparent;
+  padding: var(--silent-space-8) 0;
+}
+
+.yearList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.yearList::-webkit-scrollbar-thumb {
+  background: var(--silent-scrollbar-thumb);
+  border-radius: var(--silent-radius-full);
+}
+
+.yearItem {
+  display: block;
+  width: 100%;
+  padding: var(--silent-space-2) var(--silent-space-3);
+  border: none;
+  background: transparent;
+  font-family: var(--silent-font-mono);
+  font-size: var(--silent-text-sm);
+  color: var(--silent-color-ink-faint);
+  text-align: center;
+  cursor: pointer;
+  scroll-snap-align: center;
+  border-radius: var(--silent-radius-sm);
+  transition:
+    color var(--silent-duration-normal) var(--silent-ease-out),
+    background var(--silent-duration-normal) var(--silent-ease-out),
+    transform var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.yearItem:hover {
+  color: var(--silent-color-ink-muted);
+  background: var(--silent-color-accent-soft);
+}
+
+.yearItemSelected {
+  color: var(--silent-color-paper);
+  background: var(--silent-color-ink);
+  font-weight: 500;
+  transform: scale(1.02);
+}
+
+.yearItemSelected:hover {
+  color: var(--silent-color-paper);
+  background: var(--silent-color-ink-muted);
+}
+
+.yearFadeTop,
+.yearFadeBottom {
+  position: absolute;
+  left: 0;
+  right: 4px;
+  height: 2.5rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.yearFadeTop {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--silent-color-paper-elevated) 0%,
+    transparent 100%
+  );
+}
+
+.yearFadeBottom {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    var(--silent-color-paper-elevated) 0%,
+    transparent 100%
+  );
+}

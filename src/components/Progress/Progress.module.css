@@ -1,0 +1,41 @@
+.progress {
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--silent-space-2);
+  font-size: var(--silent-text-xs);
+  letter-spacing: var(--silent-tracking-wide);
+  text-transform: uppercase;
+  color: var(--silent-color-ink-faint);
+}
+
+.track {
+  height: 2px;
+  background: var(--silent-color-line);
+  border-radius: var(--silent-radius-full);
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: var(--silent-color-ink);
+  border-radius: var(--silent-radius-full);
+  transform-origin: left;
+}
+
+.indeterminate .bar {
+  width: 40%;
+  animation: indeterminate 1.5s var(--silent-ease-in-out) infinite;
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(350%);
+  }
+}

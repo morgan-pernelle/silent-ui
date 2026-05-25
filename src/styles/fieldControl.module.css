@@ -1,0 +1,37 @@
+/* Shared clickable control surface — full area focuses the field */
+.controlWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--silent-space-2);
+  width: 100%;
+  cursor: text;
+  border-bottom: 1px solid var(--silent-color-line-strong);
+  padding-bottom: var(--silent-space-3);
+  transition: border-color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.controlWrap:focus-within {
+  border-color: var(--silent-color-ink);
+}
+
+.controlWrapDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.controlLabel {
+  font-size: var(--silent-text-xs);
+  letter-spacing: var(--silent-tracking-wider);
+  text-transform: uppercase;
+  color: var(--silent-color-ink-faint);
+  cursor: text;
+}
+
+.controlError {
+  border-color: #8b4040;
+}
+
+.controlError:focus-within {
+  border-color: #8b4040;
+}

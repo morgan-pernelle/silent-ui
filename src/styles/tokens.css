@@ -1,0 +1,97 @@
+/* Silent UI — Design tokens
+   Inspired by Japanese minimalism: ma (間), restraint, precision */
+
+:root {
+  /* Color — ink on paper */
+  --silent-color-ink: #0a0a0a;
+  --silent-color-ink-muted: #3d3d3d;
+  --silent-color-ink-faint: #6b6b6b;
+  --silent-color-paper: #f7f5f0;
+  --silent-color-paper-elevated: #ffffff;
+  --silent-color-line: rgba(10, 10, 10, 0.08);
+  --silent-color-line-strong: rgba(10, 10, 10, 0.16);
+  --silent-color-accent: #1a1a1a;
+  --silent-color-accent-soft: rgba(10, 10, 10, 0.04);
+  --silent-color-focus: rgba(10, 10, 10, 0.24);
+
+  /* Scrollbar */
+  --silent-scrollbar-track: transparent;
+  --silent-scrollbar-thumb: rgba(10, 10, 10, 0.18);
+  --silent-scrollbar-thumb-hover: rgba(10, 10, 10, 0.32);
+
+  /* Typography — refined grotesque rhythm */
+  --silent-font-sans: "Instrument Sans", "Helvetica Neue", "Hiragino Sans",
+    "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+  --silent-font-display: "Instrument Serif", "Georgia", "Hiragino Mincho ProN",
+    "Yu Mincho", serif;
+  --silent-font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+  --silent-text-xs: 0.6875rem;
+  --silent-text-sm: 0.8125rem;
+  --silent-text-base: 0.9375rem;
+  --silent-text-lg: 1.125rem;
+  --silent-text-xl: 1.5rem;
+  --silent-text-2xl: 2.25rem;
+  --silent-text-3xl: 3.5rem;
+  --silent-text-4xl: clamp(3rem, 8vw, 6rem);
+
+  --silent-leading-tight: 1.15;
+  --silent-leading-normal: 1.6;
+  --silent-leading-relaxed: 1.85;
+  --silent-tracking-tight: -0.03em;
+  --silent-tracking-normal: 0.01em;
+  --silent-tracking-wide: 0.12em;
+  --silent-tracking-wider: 0.2em;
+
+  /* Spacing — ma (間) */
+  --silent-space-1: 0.25rem;
+  --silent-space-2: 0.5rem;
+  --silent-space-3: 0.75rem;
+  --silent-space-4: 1rem;
+  --silent-space-5: 1.5rem;
+  --silent-space-6: 2rem;
+  --silent-space-8: 3rem;
+  --silent-space-10: 4rem;
+  --silent-space-12: 6rem;
+  --silent-space-16: 8rem;
+  --silent-space-20: 12rem;
+
+  /* Radius — subtle geometry */
+  --silent-radius-sm: 2px;
+  --silent-radius-md: 4px;
+  --silent-radius-lg: 8px;
+  --silent-radius-full: 9999px;
+
+  /* Motion — deliberate, never rushed */
+  --silent-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --silent-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --silent-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --silent-duration-fast: 200ms;
+  --silent-duration-normal: 400ms;
+  --silent-duration-slow: 700ms;
+  --silent-duration-slower: 1200ms;
+
+  /* Layout */
+  --silent-max-width: 1280px;
+  --silent-content-width: 720px;
+  --silent-nav-height: 4rem;
+  --silent-z-overlay: 100;
+  --silent-z-modal: 200;
+}
+
+[data-silent-theme="dark"] {
+  --silent-color-ink: #f0ede6;
+  --silent-color-ink-muted: #a8a49c;
+  --silent-color-ink-faint: #8f8a80;
+  --silent-color-paper: #0c0c0c;
+  --silent-color-paper-elevated: #141414;
+  --silent-color-line: rgba(240, 237, 230, 0.08);
+  --silent-color-line-strong: rgba(240, 237, 230, 0.16);
+  --silent-color-accent: #f0ede6;
+  --silent-color-accent-soft: rgba(240, 237, 230, 0.04);
+  --silent-color-focus: rgba(240, 237, 230, 0.32);
+
+  --silent-scrollbar-track: transparent;
+  --silent-scrollbar-thumb: rgba(240, 237, 230, 0.16);
+  --silent-scrollbar-thumb-hover: rgba(240, 237, 230, 0.28);
+}

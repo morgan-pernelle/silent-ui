@@ -1,0 +1,92 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  transition: transform var(--silent-duration-slow) var(--silent-ease-out);
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.slideInner {
+  width: 100%;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  background: var(--silent-color-paper-elevated);
+  color: var(--silent-color-ink-muted);
+  border-radius: var(--silent-radius-sm);
+  border: 1px solid var(--silent-color-line);
+  cursor: pointer;
+  z-index: 1;
+  transition:
+    color var(--silent-duration-normal) var(--silent-ease-out),
+    background var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.nav:hover:not(:disabled) {
+  color: var(--silent-color-ink);
+  background: var(--silent-color-paper);
+}
+
+.nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.prev {
+  left: var(--silent-space-3);
+}
+
+.next {
+  right: var(--silent-space-3);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--silent-space-2);
+  margin-top: var(--silent-space-4);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: var(--silent-radius-full);
+  background: var(--silent-color-line-strong);
+  cursor: pointer;
+  transition:
+    background var(--silent-duration-normal) var(--silent-ease-out),
+    transform var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.dot:hover {
+  background: var(--silent-color-ink-faint);
+}
+
+.dotActive {
+  background: var(--silent-color-ink);
+  transform: scale(1.2);
+}

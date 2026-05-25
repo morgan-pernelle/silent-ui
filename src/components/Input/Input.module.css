@@ -1,0 +1,44 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--silent-space-2);
+  width: 100%;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-base);
+  color: var(--silent-color-ink);
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--silent-color-ink-faint);
+  opacity: 0.6;
+}
+
+.textareaWrap {
+  padding-top: var(--silent-space-1);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: var(--silent-leading-relaxed);
+}
+
+.hint {
+  font-size: var(--silent-text-xs);
+  color: var(--silent-color-ink-faint);
+}
+
+.errorText {
+  font-size: var(--silent-text-xs);
+  color: #8b4040;
+}

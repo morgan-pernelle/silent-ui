@@ -1,0 +1,74 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--silent-space-2);
+  width: 100%;
+}
+
+.controlInner {
+  padding-bottom: var(--silent-space-3);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  color: var(--silent-color-ink-faint);
+  font-size: var(--silent-text-sm);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.input {
+  width: 100%;
+  font-family: var(--silent-font-sans);
+  font-size: var(--silent-text-base);
+  color: var(--silent-color-ink);
+  background: transparent;
+  border: none;
+  padding: 0 var(--silent-space-8) 0 var(--silent-space-6);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--silent-color-ink-faint);
+  opacity: 0.6;
+}
+
+.clear {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--silent-color-ink-faint);
+  cursor: pointer;
+  font-size: var(--silent-text-lg);
+  line-height: 1;
+  transition: color var(--silent-duration-normal) var(--silent-ease-out);
+}
+
+.clear:hover {
+  color: var(--silent-color-ink);
+}
+
+.hint {
+  font-size: var(--silent-text-xs);
+  color: var(--silent-color-ink-faint);
+}
+
+.errorText {
+  font-size: var(--silent-text-xs);
+  color: #8b4040;
+}
