@@ -1,7 +1,7 @@
 /** npm package metadata — keep in sync with root package.json version. */
 export const packageMeta = {
   name: "@silent-ui/react",
-  version: "0.1.1",
+  version: "0.1.2",
   npmUrl: "https://www.npmjs.com/package/@silent-ui/react",
   repoUrl: "https://github.com/morgan-pernelle/silent-ui.git",
   repoClone: "git clone https://github.com/morgan-pernelle/silent-ui.git",

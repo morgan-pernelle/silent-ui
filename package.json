@@ -1,6 +1,6 @@
 {
   "name": "@silent-ui/react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A minimal UI library with smooth animations, inspired by Japanese design and award-winning web experiences.",
   "type": "module",
   "repository": {
@@ -48,13 +48,13 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.4",
     "jsdom": "^25.0.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-router-dom": "^6.30.3",
     "typescript": "^5.7.3",
     "vite": "^6.0.7",
