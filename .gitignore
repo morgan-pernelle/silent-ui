@@ -1,5 +1,6 @@
 node_modules
 dist
+*.tgz
 demo-dist
 *.local
 .DS_Store
