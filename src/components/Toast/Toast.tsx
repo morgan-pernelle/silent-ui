@@ -4,6 +4,7 @@ import {
   useCallback,
   useContext,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
@@ -28,8 +29,13 @@ const MAX_TOASTS = 5;
 
 let toastId = 0;
 
+function subscribeNoop() {
+  return () => {};
+}
+
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
+  const mounted = useSyncExternalStore(subscribeNoop, () => true, () => false);
 
   const dismiss = useCallback((id: string) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));
@@ -54,7 +60,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastContext.Provider value={{ toast, dismiss }}>
       {children}
-      {typeof document !== "undefined" &&
+      {mounted &&
+        typeof document !== "undefined" &&
         createPortal(
           <div className={styles.container} aria-live="polite">
             <AnimatePresence>

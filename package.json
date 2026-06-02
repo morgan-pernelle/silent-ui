@@ -1,6 +1,6 @@
 {
   "name": "@silent-ui/react",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A minimal UI library with smooth animations, inspired by Japanese design and award-winning web experiences.",
   "type": "module",
   "repository": {

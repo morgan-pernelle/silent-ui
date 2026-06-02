@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-06-02
+
+### Fixed
+
+- **Toast SSR** — toast portal mounts only after hydration (`useSyncExternalStore`), preventing Next.js hydration mismatches.
+
 ## [0.1.2] - 2026-06-01
 
 ### Fixed
@@ -42,7 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dark theme: improved contrast for labels and sidebar metadata
 - Demo copy uses on-brand text instead of placeholder lorem ipsum
 
-[Unreleased]: https://github.com/morgan-pernelle/silent-ui/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/morgan-pernelle/silent-ui/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/morgan-pernelle/silent-ui/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/morgan-pernelle/silent-ui/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/morgan-pernelle/silent-ui/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/morgan-pernelle/silent-ui/releases/tag/v0.1.0
